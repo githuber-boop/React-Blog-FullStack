@@ -6,7 +6,7 @@ router.use(express.json());
 
 
 // to create signup route
-router.post('/api',async(req,res)=>{
+router.post('/',async(req,res)=>{
     try {
         const data =req.body;
         let newUser = await users(data).save();
@@ -18,7 +18,7 @@ router.post('/api',async(req,res)=>{
 })
 
 // route for login
-router.post('/api/login',async(req,res)=>{
+router.post('/login',async(req,res)=>{
     console.log(req.body);
     let username= req.body.username;
     let password =req.body.password;

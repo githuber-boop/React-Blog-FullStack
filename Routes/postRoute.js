@@ -17,7 +17,7 @@ function verifytoken(req,res,next) {
    
     
 }
-router.get('/api/blogs',verifytoken,async(req,res)=>{
+router.get('/blogs',verifytoken,async(req,res)=>{
     try {
         const data= await posts.find();
         res.status(200).send(data)
@@ -28,7 +28,7 @@ router.get('/api/blogs',verifytoken,async(req,res)=>{
 
 })
 // to add blog
-router.post('/api/add',verifytoken,async(req,res)=>{
+router.post('/add',verifytoken,async(req,res)=>{
     try {
         const post = req.body;
         const data = await posts(post).save();
