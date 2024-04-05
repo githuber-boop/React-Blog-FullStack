@@ -18,7 +18,7 @@ app.use(cors());
 
 
 app.use('/api',userRoute)
-app.use('/admin',postroute);
+app.use('/api',postroute);
 
 app.get('/*', function(req, res) 
 { res.sendFile(path.join(__dirname ,'/build/index.html')); });
